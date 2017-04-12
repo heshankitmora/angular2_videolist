@@ -1,0 +1,38 @@
+body{
+  padding:0;
+  margin:0;
+}
+
+.header{
+  width:100%;
+  background:#FFFFFF;
+  display: table;
+}
+
+.header > div{
+  display: table-cell;
+  width:50%;
+  padding:10px;
+}
+
+.header > div:first-child{
+  background: #0d447a;
+  text-align: right;
+}
+
+.header > div:last-child{
+  text-align: left;
+}
+
+
+.header > div h1{
+  font-size:20px;
+  text-transform: uppercase;
+  color:#0d447a;
+}
+
+.header > div:first-child h1{
+  color:#FFFFFF;
+}
+
+

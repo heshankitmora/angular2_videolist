@@ -1,0 +1,68 @@
+.user-login{
+  width:40%;
+  display: block;
+  margin-left:auto;
+  margin-right: auto;
+  max-width: 400px;
+}
+
+input{
+  width:100%;
+  border:1px solid #0d447a;
+  padding:10px 20px;
+  box-sizing: border-box;
+}
+
+.dv-user{
+  width:100%;
+  padding-top:10px;
+  padding-bottom: 10px;
+}
+
+.dv-user > span{
+  font-size: 12px;
+  text-align: center;
+}
+
+.title-user{
+  font-size:16px;
+  text-align: center;
+}
+
+
+.user-login button[type="submit"]{
+  width:100%;
+  border:none;
+  padding:10px;
+  color:#FFFFFF;
+  font-size:14px;
+  text-transform: uppercase;
+  font-weight:bold;
+  background:#0d447a;
+  transition:2s background;
+  cursor: pointer;
+}
+
+.user-login button[type="submit"]:hover{
+  background: #09325a;
+}
+
+.user-login button[disabled]{
+  color:#545454;
+  background: #bfbfbf;
+}
+
+.login-status{
+  color:red;
+  font-size:12px;
+}
+
+/*Styles for Mobile Devices*/
+@media only screen and (max-width:639px){
+  .user-login{
+    width:90%;
+  }
+}
+
+
+

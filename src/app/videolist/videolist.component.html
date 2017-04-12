@@ -1,0 +1,33 @@
+<div class="user-actions">
+  <a (click)="logoutUser()">Logout</a>
+</div>
+<div class="wrapper-outer">
+  <div class="main-wrapper">
+    <ul class="main-video-list first">
+      <li *ngFor="let videoItems of videolist;let i = index">
+        <div class="video-list">
+          <a (click)="viewVideo(videoItems, i)" class="video-title">
+            {{ videoItems.name }}
+          </a>
+
+          <video>
+            <source [src]="urlext+videoItems.url" type="video/mp4">
+          </video>
+          <div class="rate-ul-main">
+
+            <ul class="rate-ul">
+              <li *ngFor="let rate of rateArr; let rateVal = index">
+                <a [class.rated]="rateVal<averagerating(videoItems.ratings)"></a>
+              </li>
+            </ul>
+
+          </div>
+          <p>{{ shortDesc(videoItems.description) }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+

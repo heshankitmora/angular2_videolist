@@ -1,0 +1,51 @@
+<div class="user-actions">
+  <a (click)="backToList()"> Back</a>
+  <a (click)="logoutUser()">Logout</a>
+</div>
+<div class="video-page-main-outer">
+  <div class="video-page-main" *ngIf="videoId != ''">
+    <div class="video-page-main-inner">
+      <div>
+
+        <video [src]="urlext+videoUrl" controls>
+        </video>
+        <a class="video-title-main">
+          {{ videoName }}
+        </a>
+        <div class="rating-video">
+        <span class="success-rated">
+          {{ rateStatus }}
+        </span>
+          <ul class="rate-ul">
+            <li #rateElements *ngFor="let rate of rateArr; let rateVal = index">
+
+              <a [class.rated]="rateVal<videoRate" (mouseover)="highLighted($event,rateVal)" (mouseleave)="highLightedRemove($event,rateVal)"  (click)="rateVideo(videoId,rateVal)"></a>
+
+            </li>
+          </ul>
+        </div>
+        <p>{{ videoDesc }}</p>
+      </div>
+    </div>
+    <div class="video-other-outer">
+      <div class="video-other">
+        <div class="prev-video" *ngIf="prevVideo">
+          <h2>Previous Video</h2>
+          <a (click)="viewVideo(prevVideo)">{{ prevVideo.name }}</a>
+          <video>
+            <source [src]="urlext+prevVideo.url" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="video-other">
+        <div class="prev-video" *ngIf="nextVideo">
+          <h2>Next Video</h2>
+          <a (click)="viewVideo(nextVideo)">{{ nextVideo.name }}</a>
+          <video>
+            <source [src]="urlext+nextVideo.url" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="user-login">
+  <h2 class="title-user">
+    Please Login to View Vidoes
+  </h2>
+
+  <form #form="ngForm" (submit)="userSubmitLogin(form)" novalidate>
+    <span class="login-status">{{ loginStatusMsg }}</span>
+    <div class="dv-user">
+      <input type="text" #username="ngModel" required placeholder="Type User Name" name="username" [(ngModel)]="model.username"/>
+      <span *ngIf="username.invalid">Please Enter User Name</span>
+    </div>
+    <div class="dv-user">
+      <input type="password" #password="ngModel" required name="password" [(ngModel)]="model.password" placeholder="Type Password"/>
+      <span *ngIf="password.invalid">Please Enter Password</span>
+    </div>
+    <div>
+      <button [disabled]="form.invalid" type="submit">Login</button>
+    </div>
+  </form>
+</div>
+
+
+
+
